@@ -10,8 +10,19 @@ class ClubsController < ApplicationController
     render :show
   end
 
+  def new
+    @club = Club.new
+    render :new
+  end
+  
   def create
-    render :show    
+    @club = Club.create(
+      name: params[:club][:name],
+      angle: params[:club][:angle],
+      price: params[:club][:price],
+      description: params[:club][:description]
+      )
+    redirect_to "/clubs"
   end
 
   def update

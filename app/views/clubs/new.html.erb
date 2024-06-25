@@ -1,0 +1,49 @@
+<!-- Use the Rails form_with helper to generate a form -->
+<h1>New Photo</h1>
+<%= form_with model: @club do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :angle %>
+    <%= form.text_field :angle %>
+  </div>
+  <div>
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end%>
+
+IN BETWEEN RAILS FORM AND HTML FORM
+<!-- Or write out the HTML manually -->
+<h1>New Photo</h1>
+<form method="post" action="/clubs">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div>
+    <label>Name </label>
+    <input type="text" name="club[name]">
+  </div>
+  <div>
+    <label>Angle </label>
+    <input type="text" name="club[angle]">
+  </div>
+  <div>
+    <label>Price </label>
+    <input type="text" name="club[price]">
+  </div>
+  <div>
+    <label>Description </label>
+    <input type="text" name="club[description]">
+  </div>
+  <div>
+    <input type="submit" value="Create club">
+  </div>
+</form>
