@@ -7,11 +7,11 @@ Hello, I am in the html
 
 <% @clubs.each do |club|%>
   <p><%= club.name%></p>
-  <a href="http://localhost:3000/clubs/2"> More Information </a>
+  <a href="<%= "/clubs/#{club.id}" %>"> More Information </a>
   <button onClick="showMoreInfo()">More Info 2</button>
   <script>
     function showMoreInfo() {
-      window.location.href = "http://localhost:3000/clubs/2"
+      window.location.href =" <%= "/clubs/#{club.id}" %> "
     }
   </script>
   <hr/>

@@ -9,4 +9,9 @@
 <p>Tax: <%= @club.price * 0.10%></p>
 <p>Total: <%= @club.price + (@club.price * 0.10)%></p>
 
-<button>Render this button</button>
+<button onClick="backToIndexPage()">Render this button</button>
+<script>
+  function backToIndexPage() {
+    window.location.href = "http://localhost:3000/clubs"
+  }
+</script>
